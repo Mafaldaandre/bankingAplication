@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Lista de contas</h5>
+    </div>
+
+    <div class="list-group list-group-flush">
+        {{#if accountsType}}
+            {{#each accountsType}}
+                <a href="/manager/accountType/{{ this._id }}" class="list-group-item list-group-item-action">
+                    {{ this.name }}
+                </a>
+            {{/each}}
+        {{^}}
+            <div class="list-group-item">Não existem contas</div>
+        {{/if}}
+    </div>
+</div>

@@ -1,0 +1,39 @@
+{{#with accountType}}
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">{{ name }}</h5>
+            </div>
+
+            <div class="card-body row">
+                <div class="col-8">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>Descrição:</strong> {{ description }}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Taxa de juro:</strong> {{ interestRate }} <span>%</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Data:</strong> {{ createDate }}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Prazo:</strong> {{ term }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <a href="/manager/accountType/{{ _id }}/form" class="btn btn-sm btn-outline-primary">Edit</a>
+                <a href="/manager/accountType/{{ _id }}/delete" onclick="return confirm('Remove?')"
+                    class="btn btn-sm btn-outline-danger">Remove</a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</div>
+{{/with}}

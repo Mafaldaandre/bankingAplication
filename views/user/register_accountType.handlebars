@@ -1,0 +1,78 @@
+<main>
+    <form method="post" class="card">
+        <div class="card-header">
+            <h5 class="card-title">Nova conta</h5>
+        </div>
+
+        <div class="card-body">
+            {{#with accountType}}
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">{{ name }}</h5>
+                        </div>
+                        <div class="card-body row">
+                            <div class="col-8">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <strong>Descrição:</strong> {{ description }}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Taxa de juro:</strong> {{ interestRate }}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Prazo:</strong> {{ term }} 
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/with}}
+        </div>
+
+
+        {{#unless user }}
+
+        <div class="card-header">
+            <h5 class="card-title">Dados do titular</h5>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="nameInput" class="form-label">Nome</label>
+                <input type="text" id="inputName" class="form-control" placeholder="Nome" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="emailnput" class="form-label">Email</label>
+                <input type="email" id="emailInput" class="form-control" placeholder="Email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="inputPassword" class="form-label">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+            </div>
+            <div class="mb-3">
+                <label for="inputAddress" class="form-label">Morada</label>
+                <input type="text" id="inputAddress" class="form-control" placeholder="Morada" name="address" required>
+            </div>
+            <div class="mb-3">
+                <label for="inputPhone" class="form-label">Telemóvel</label>
+                <input type="tel" id="inputPhone" class="form-control" placeholder="Telemóvel" name="phone" required>
+            </div>
+            <div class="mb-3">
+                <label for="inputWork" class="form-label">Profissão</label>
+                <input type="text" id="inputWork" class="form-control" placeholder="Profissão" name="work" required>
+            </div>
+            <div class="mb-3">
+                <label for="inputNif" class="form-label">Nif</label>
+                <input type="text" id="inputNif" class="form-control" placeholder="Nif" name="nif" required>
+            </div>
+        </div>
+        {{/unless}}
+        <div class="card-footer d-flex justify-content-md-end ">
+            <button type="submit" class="btn btn-primary me-md-4">Criar conta</button>
+        </div>
+    </form>
+
+</main>

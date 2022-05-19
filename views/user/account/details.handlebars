@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid ps-5">
+    <div class="card" style="width: 10rem;">
+      <p class="link-dark text-center fs-4">Saldo</p>
+      <span class="text-center">{{ this.account.balance }}</span>
+    </div>
+    <div class="dropdown pe-5">
+      {{#if this.account.accountInfo.locked }}
+          {{#unless this.account.balance }}
+            <a class="dropdown-item btn btn-secondary" href="/user/account/reforce/{{ this.account._id }}">Reforçar</a>
+          {{/unless}}
+      {{else}}
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        Transferências
+        </button>
+      {{#if this.account.accountInfo.private }}
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="/user/account/liquidation/{{ this.account._id }}">Liquidar</a></li>
+          <li><a class="dropdown-item" href="/user/account/reforce/{{ this.account._id }}">Reforçar</a></li>
+        </ul>
+        {{^}}
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="/user/account/transfers/nationals">Nacionais</a></li>
+          <li><a class="dropdown-item" href="/user/account/transfers/international">Internacionais</a></li>
+        </ul>
+        {{/if}}
+      {{/if}}
+    </div>
+  </div>
+</nav>
+
+<div class="card mt-5">
+  <div class="card-header">
+    <h5 class="card-title text-center">Movimentos</h5>
+  </div>
+
+  <div class="list-group list-group-flush">
+    {{#if transactions}}
+
+    <div>
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item col-3"><strong>Data</strong> </li>
+        <li class="list-group-item col-6"><strong>Descrição</strong></li>
+        <li class="list-group-item col-3"><strong>Montante</strong></li>
+      </ul>
+    </div>
+    {{#each transactions}}
+    <div>
+      <a href="/user/account/{{ this._id }}" class="text-decoration-none">
+        <ul class="list-group list-group-horizontal-sm">
+          <li class="list-group-item col-3">{{ this.date }}</li>
+          <li class="list-group-item col-6">{{ this.description }}</li>
+          <li class="list-group-item col-3">  {{#if this.exit }}  - {{ this.exit }}   {{^}} {{ this.entrance }} {{/if}}  €</li>
+        </ul>
+      </a>
+    </div>
+
+    {{/each}}
+    {{^}}
+    <div class="list-group-item text-center">Sem movimentos</div>
+    {{/if}}
+  </div>
+</div>

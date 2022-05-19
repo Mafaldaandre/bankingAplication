@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Lista de contas</h5>
+    </div>
+
+    <div class="list-group list-group-flush ">
+        {{#if accountsType}}
+            {{#each accountsType}}
+                <div class="list-group-item list-group-item-action">
+                    {{ this.name }} <a href="/user/accountType/{{ this._id }}"  class="d-md-flex justify-content-end text-decoration-none"><button class="btn btn-success" type="submit">Abrir conta</button></a>
+                </div>
+            {{/each}}
+        {{^}}
+            <div class="list-group-item">Não existem contas</div>
+        {{/if}}
+    </div>
+</div>

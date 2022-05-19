@@ -1,0 +1,51 @@
+<form method="post" class="card">
+    <div class="card-header">
+        <h5 class="card-title">Nova conta</h5>
+    </div>
+
+    <div class="card-body">
+        <div class="mb-3">
+            <label for="nameInput" class="form-label">Nome</label>
+            <input type="text" class="form-control" name="name" id="nameInput" required autofocus
+                value="{{#with accountType}}{{ name }}{{/with}}">
+        </div>
+        <div class="mb-3">
+            <label for="descriptionInput" class="form-label">Descrição</label>
+            <input type="text" class="form-control" name="description" id="descriptionInput" required
+                value="{{#with accountType}}{{ description }}{{/with}}">
+        </div>
+        <div class="mb-3">
+            <label for="interestRateInput" class="form-label">Taxa de juro</label>
+            <input type="text" class="form-control" name="interestRate" id="interestRateInput" required
+                value="{{#with accountType}}{{ interestRate }}{{/with}}">
+        </div>
+        <div class="mb-3">
+            <label for="termInput" class="form-label">Prazo(dias)</label>
+            <input type="text" class="form-control" name="term" id="termInput" required
+                value="{{#with accountType}}{{ term }}{{/with}}">
+        </div>
+        <div class="mb-3">
+            <p>Visibilidade de conta</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="private" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Privada
+                </label>
+            </div>
+        </div>
+
+          <div class="mb-3">
+            <p>Não é possível movimentar o capital</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="locked" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Sim
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-footer">
+        <button type="submit" class="btn btn-sm btn-outline-primary">Registar</button>
+    </div>
+</form>

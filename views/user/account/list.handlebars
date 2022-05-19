@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Lista de contas</h5>
+    </div>
+
+    <div class="list-group list-group-flush ">
+        {{#if accounts}}
+            {{#each accounts}}
+                <div class="list-group-item list-group-item-action">
+                   <a href="/user/account/{{ this._id }}"  class="d-md-flex justify-content-end text-decoration-none"> {{ this.accountInfo.name }}</a>
+                   <a href="/user/account/{{ this._id }}/delete" onclick="return confirm('Remove?')"
+                    class="btn btn-sm btn-outline-danger">Apagar</a>
+                </div>
+            {{/each}}
+        {{^}}
+            <div class="list-group-item">Não existem contas</div> 
+        {{/if}}
+    </div>
+</div>

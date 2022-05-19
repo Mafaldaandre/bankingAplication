@@ -1,0 +1,48 @@
+<h2 class="text-center p-5">Transferências Nacionais</h2>
+
+<div class="card">
+    <div class="card-header">
+        <h6 class="p-2">Conta a debitar</h6>
+    </div>
+
+    <div class="row g-3 p-2">
+        <div class="col-sm p-2">
+            <h6>Conta á ordem </h6>
+            <span> {{ account.iban }} </span>
+        </div>
+        <div class="col-sm p-2">
+            <h6>Saldo</h6>
+            <span> {{ account.balance }} € </span> 
+        </div>
+    </div>
+</div>
+
+<div class="card p-2 mt-3">
+    <form class="row g-3" method="post">
+        <div class="card-header">
+            <h6 class="p-2">Dados para transferência</h6>
+        </div>
+        <div class="col-md-3">
+            <label for="inputExit" class="form-label">Montante</label>
+            <input type="text" class="form-control" id="inputExit" placeholder="Montante" name="exit">
+        </div>
+        <div class="card-header">
+            <h6 class="p-2">Conta destino</h6>
+        </div>
+         <div class="col-6">
+            <label for="inputName" class="form-label">Nome do beneficiário</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Nome" name="name">
+        </div>
+        <div class="col-md-6">
+            <label for="inputIban" class="form-label">Iban</label>
+            <input type="text" class="form-control" id="inputIban" placeholder="Iban" name="iban">
+        </div>
+        <div class="col-12">
+            <label for="inputDescription" class="form-label">Descritivo</label>
+            <input type="text" class="form-control" id="inputDescription" placeholder="Descrição" name="description">
+        </div>
+        <div class="col-12 text-center">
+            <button type="submit" class="btn btn-secondary">Submeter</button>
+        </div>
+    </form>
+</div>

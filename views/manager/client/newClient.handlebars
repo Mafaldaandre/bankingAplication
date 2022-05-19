@@ -1,0 +1,38 @@
+
+
+<body class="text-center">
+  
+    <form class="row g-3" method="post">
+
+      <h1 class="h3 mb-3 fw-normal">Novo cliente</h1>
+
+      <div class="col-md-6">
+        <label for="nameInput" class="form-label">Nome</label>
+        <input type="text" id="inputName" class="form-control" placeholder="Name" name="name"  required value="{{#with client}}{{ name }}{{/with}}">
+      </div>
+      <div class="col-md-6">
+        <label for="emailnput" class="form-label">Email</label>
+        <input type="email" id="emailInput" class="form-control" placeholder="Email" name="email"  required value="{{#with client}}{{ email }}{{/with}}">
+      </div>
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">Morada</label>
+        <input type="text" id="inputAddress" class="form-control" placeholder="Morada" name="address"  required value="{{#with client}}{{ address }}{{/with}}">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPhone" class="form-label">Telemóvel</label>
+        <input type="tel" id="inputPhone" class="form-control" placeholder="Telemóvel" name="phone"  required value="{{#with client}}{{ phone }}{{/with}}">
+      </div>
+       <div class="col-6">
+        <label for="inputWork" class="form-label">Profissão</label>
+        <input type="text" id="inputWork" class="form-control" placeholder="Profissão" name="work"  required value="{{#with client}}{{ work }}{{/with}}">
+      </div>
+      <div class="col-6">
+        <label for="inputNif" class="form-label">Nif</label>
+        <input type="text" id="inputNif" class="form-control" placeholder="Nif" name="nif"  required value="{{#with client}}{{ nif }}{{/with}}">
+      </div>
+      <div class="col-12">
+        <button type="submit" class="w-50 btn btn-lg btn-secondary">Salvar</button>
+      </div>
+    </form>
+</body>
+

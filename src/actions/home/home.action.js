@@ -1,0 +1,1 @@
+module.exports = async (_, res) => res.render('home');

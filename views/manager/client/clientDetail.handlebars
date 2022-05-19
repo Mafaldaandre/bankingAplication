@@ -1,0 +1,47 @@
+{{#with client}}
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">{{ name }}</h5>
+            </div>
+
+            <div class="card-body row">
+                <div class="col-12">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>Email</strong> {{ email }}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Phone</strong> {{ phone }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <a href="/manager/{{ _id }}/newClient" class="btn btn-sm btn-outline-primary">Editar</a>
+                <a href="/manager/{{ _id }}/delete" onclick="return confirm('Remove?')"
+                    class="btn btn-sm btn-outline-danger">Remover</a>
+            </div>
+        </div>
+        <div class="card">
+            <form method="post" class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Adicionar capital</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="nameInput" class="form-label">Valor</label>
+                        <input type="text" class="form-control" name="montante" id="nameInput" required autofocus value="0">
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-sm btn-outline-primary">Adicionar</button>
+                </div>
+            </form>
+        </div>      
+    </div>
+</div>
+{{/with}}

@@ -1,0 +1,42 @@
+{{#with user}}
+<form method="post" class="card">
+    <div class="card-header">
+        <h5 class="card-title">My Profile</h5>
+    </div>
+
+    <div class="card-body">
+        <div class="mb-3">
+            <label for="nameInput" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" id="nameInput" required autofocus value="{{ name }}">
+        </div>
+        <div class="mb-3">
+            <label for="emailInput" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="emailInput" required value="{{ email }}">
+        </div>
+        <div class="mb-3">
+            <label for="passwordInput" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="passwordInput">
+        </div>
+        <div class="mb-3">
+            <label for="addressInput" class="form-label">Morada</label>
+            <input type="text" class="form-control" name="address" id="addressInput"  required value="{{ address }}">
+        </div>
+        <div class="mb-3">
+            <label for="phoneInput" class="form-label">Telemóvel</label>
+            <input type="tel" class="form-control" name="phone" id="phoneInput"  required value="{{ phone }}">
+        </div>
+        <div class="mb-3">
+            <label for="workInput" class="form-label">Profissão</label>
+            <input type="text" class="form-control" name="work" id="workInput"  required value="{{ work }}">
+        </div>
+         <div class="mb-3">
+            <label for="nifInput" class="form-label">Nif</label>
+            <input type="text" class="form-control" name="nif" id="nifInput" disabled value="{{ nif }}">
+        </div>
+    </div>
+
+    <div class="card-footer">
+        <button type="submit" class="btn btn-sm btn-outline-primary">Save</button>
+    </div>
+</form>
+{{/with}}
