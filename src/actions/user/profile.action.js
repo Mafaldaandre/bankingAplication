@@ -11,7 +11,7 @@ const updateProfile = async (req, res) => {
     const updatedUser = await updateUser(user._id, name, email, password, address, phone, office, nif);
     req.session.user = updatedUser;
     
-    return res.redirect('/manager/home');
+    return res.redirect('/user/home');
   
 };
 

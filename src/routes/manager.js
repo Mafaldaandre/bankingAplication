@@ -24,7 +24,6 @@ router.get('/accountType/:id',managerPathValidation,  managerDetailAction);
 
 router.get('/accountType/:id/form', managerPathValidation, managerFormAction);
 router.post('/accountType/:id/form',managerPathValidation ,  managerSaveAction);
-
 router.get('/accountType/:id/delete',managerPathValidation,  managerDeleteAction);
 
 router.get('/profile', managerPathValidation, profile);
